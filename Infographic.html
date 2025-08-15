@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: National Curriculum Framework for School Education 2023</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- 
+    Narrative Plan:
+    1.  Header: Grab attention with the main title and a concise summary of NCF-SE's goal.
+    2.  The Vision: Use large numbers and donut charts to show the core objectives - Viksit Bharat 2047 and the shift to holistic education.
+    3.  Key Educational Shifts: A bar chart to visually compare the "Traditional" vs. "NCF-SE 2023" approach across key educational aspects. This makes the change tangible.
+    4.  The Stakeholder Ecosystem: A flowchart created with HTML/CSS to illustrate the complex relationships between different stakeholder groups, showing the flow of implementation and influence.
+    5.  Implementation Hurdles: A radar chart to quantify and compare the major challenges, providing a quick understanding of the key obstacles.
+    6.  The Path Forward: Present the actionable policy recommendations in visually distinct cards to emphasize the solutions.
+    7.  Footer: Conclude with a powerful summary statement.
+
+    Color Palette Chosen: "Brilliant Blues" for a professional, vibrant, and trustworthy feel.
+    -   Primary: #00529B (Deep Blue)
+    -   Secondary: #00A1E4 (Bright Blue)
+    -   Accent 1: #F7941D (Orange)
+    -   Accent 2: #FDB913 (Yellow)
+    -   Neutral: #F2F2F2 (Light Gray)
+    -   Text: #1E293B (Slate Gray)
+
+    Visualization Choices:
+    -   Large Numbers (Goal: Inform): To highlight the 2047 target and 6% GDP goal. Implemented with styled HTML. No SVG.
+    -   Donut Charts (Goal: Inform/Compare): To show the shift in focus from rote learning to holistic skills. Implemented with Chart.js. No SVG.
+    -   Bar Chart (Goal: Compare): To clearly contrast the old vs. new educational paradigms. Implemented with Chart.js. No SVG.
+    -   Flow Chart (Goal: Organize): To map the stakeholder relationships and implementation flow. Implemented with structured HTML/CSS. No SVG, No Mermaid JS.
+    -   Radar Chart (Goal: Compare): To effectively compare the magnitude of different implementation challenges. Implemented with Chart.js. No SVG.
+    -   Styled List/Cards (Goal: Organize): To present the policy recommendations in a clear, organized manner. Implemented with HTML/CSS. No SVG.
+
+    Constraint Confirmation:
+    -   NO Mermaid JS was used.
+    -   NO SVG was used. All visuals are rendered via Canvas (Chart.js) or styled HTML elements.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F2F2F2;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flowchart-box {
+            border: 2px solid #00529B;
+            background-color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: 600;
+            color: #00529B;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .flowchart-arrow {
+            font-size: 2rem;
+            color: #00A1E4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+        
+        <header class="text-center py-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#00529B] tracking-tight">National Curriculum Framework for School Education 2023</h1>
+            <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-slate-600">A new blueprint to transform Indian education, shifting from rote memorization to holistic, competency-based learning for a future-ready generation.</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <section id="vision" class="bg-white rounded-xl shadow-lg p-6 md:p-10">
+                <h2 class="text-3xl font-bold text-center text-[#00529B] mb-8">The Vision: Building a Viksit Bharat by 2047</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-slate-50 p-6 rounded-lg">
+                        <div class="text-6xl font-extrabold text-[#F7941D]">2047</div>
+                        <p class="mt-2 text-lg font-semibold text-slate-700">Target Year</p>
+                        <p class="text-slate-500">To create a skilled and innovative workforce for a developed India.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-lg">
+                        <div class="text-6xl font-extrabold text-[#F7941D]">6%</div>
+                        <p class="mt-2 text-lg font-semibold text-slate-700">of GDP</p>
+                        <p class="text-slate-500">Target public investment in education as envisioned by NEP 2020.</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-lg">
+                        <div class="text-6xl font-extrabold text-[#F7941D]">5+3+3+4</div>
+                        <p class="mt-2 text-lg font-semibold text-slate-700">New Structure</p>
+                        <p class="text-slate-500">A redesigned curricular and pedagogical structure for ages 3-18.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-[#00529B] mb-4">Shifting Focus from Rote Learning to Real Understanding</h3>
+                        <p class="text-slate-600">The NCF-SE's primary goal is to move education away from a content-heavy, exam-focused model to one that prioritizes critical thinking, creativity, and conceptual understanding. The charts illustrate this fundamental shift in educational priorities.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center">
+                            <div class="chart-container !h-48 sm:!h-56"><canvas id="roteLearningChart"></canvas></div>
+                            <p class="mt-2 font-semibold text-slate-700">Traditional Focus</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="chart-container !h-48 sm:!h-56"><canvas id="holisticFocusChart"></canvas></div>
+                            <p class="mt-2 font-semibold text-slate-700">NCF-SE 2023 Focus</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="shifts" class="bg-white rounded-xl shadow-lg p-6 md:p-10">
+                <h2 class="text-3xl font-bold text-center text-[#00529B] mb-2">Key Educational Shifts</h2>
+                <p class="text-center text-slate-600 max-w-3xl mx-auto mb-8">The framework introduces fundamental changes across the educational landscape. This comparison highlights the move towards a more flexible, skill-oriented, and student-centric system.</p>
+                <div class="chart-container !h-96 md:!h-[450px]"><canvas id="shiftsChart"></canvas></div>
+            </section>
+            
+            <section id="stakeholders" class="bg-white rounded-xl shadow-lg p-6 md:p-10">
+                <h2 class="text-3xl font-bold text-center text-[#00529B] mb-2">The Stakeholder Ecosystem</h2>
+                <p class="text-center text-slate-600 max-w-3xl mx-auto mb-10">Successful implementation requires seamless collaboration across a complex network of stakeholders, from national policymakers to local communities.</p>
+                <div class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="flowchart-box">Ministry of Education (MoE)</div>
+                        <div class="flowchart-box">NCERT / SCERTs</div>
+                        <div class="flowchart-box">State Governments</div>
+                    </div>
+                    <div class="flowchart-arrow">↓</div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flowchart-box">CBSE & State Boards</div>
+                        <div class="flowchart-box">Schools (Public & Private)</div>
+                    </div>
+                    <div class="flowchart-arrow">↓</div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+                        <div class="flowchart-box">Teachers</div>
+                        <div class="p-4 bg-[#00A1E4] text-white rounded-lg text-center font-bold text-xl shadow-md">Students</div>
+                        <div class="flowchart-box">Parents</div>
+                    </div>
+                    <div class="flowchart-arrow">↕</div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="flowchart-box bg-slate-100 !border-slate-300 !text-slate-600">Media & Expert Bodies</div>
+                        <div class="flowchart-box bg-slate-100 !border-slate-300 !text-slate-600">Civil Society (NGOs)</div>
+                        <div class="flowchart-box bg-slate-100 !border-slate-300 !text-slate-600">Teacher & Parent Associations</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="challenges" class="bg-white rounded-xl shadow-lg p-6 md:p-10">
+                 <h2 class="text-3xl font-bold text-center text-[#00529B] mb-2">Major Implementation Hurdles</h2>
+                <p class="text-center text-slate-600 max-w-3xl mx-auto mb-8">While the NCF-SE is visionary, its success depends on overcoming significant practical challenges. The radar chart below shows the perceived magnitude of these key hurdles.</p>
+                <div class="chart-container !h-96"><canvas id="challengesChart"></canvas></div>
+            </section>
+
+            <section id="recommendations" class="bg-[#00529B] text-white rounded-xl shadow-lg p-6 md:p-10">
+                <h2 class="text-3xl font-bold text-center mb-8">The Path Forward: Key Recommendations</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white/10 p-6 rounded-lg border border-white/20">
+                        <div class="text-2xl font-bold text-[#FDB913] mb-2">1. Strengthen Teacher Capacity</div>
+                        <p class="text-white/90">Invest in scalable, continuous, and contextualized professional development using blended learning modules and mentorship networks to equip teachers for new pedagogical approaches.</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg border border-white/20">
+                        <div class="text-2xl font-bold text-[#FDB913] mb-2">2. Ensure Equitable Resources</div>
+                        <p class="text-white/90">Implement targeted funding for infrastructure gaps and develop diverse, open-source learning resources to bridge the digital and material divide, especially in rural areas.</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg border border-white/20">
+                        <div class="text-2xl font-bold text-[#FDB913] mb-2">3. Establish Feedback Loops</div>
+                        <p class="text-white/90">Create a robust, adaptive assessment framework and a digital platform for real-time feedback from schools to enable continuous improvement and data-informed policy adjustments.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center py-12 mt-8">
+            <p class="text-lg text-slate-600 font-semibold">Empowering the next generation to lead India into a prosperous and globally influential future.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const wrapLabel = (label, maxWidth = 16) => {
+            if (label.length <= maxWidth) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        };
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+
+        const chartDefaults = {
+            plugins: {
+                legend: {
+                    labels: {
+                        font: {
+                            family: "'Inter', sans-serif",
+                            size: 12,
+                        },
+                        color: '#1E293B',
+                    }
+                },
+                tooltip: {
+                    titleFont: { family: "'Inter', sans-serif" },
+                    bodyFont: { family: "'Inter', sans-serif" },
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            },
+            maintainAspectRatio: false,
+        };
+
+        const roteLearningCtx = document.getElementById('roteLearningChart').getContext('2d');
+        new Chart(roteLearningCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Rote Memorization', 'Other Skills'],
+                datasets: [{
+                    data: [75, 25],
+                    backgroundColor: ['#00529B', '#F2F2F2'],
+                    borderColor: ['#00529B', '#F2F2F2'],
+                    borderWidth: 1
+                }]
+            },
+            options: { ...chartDefaults, cutout: '70%' }
+        });
+
+        const holisticFocusCtx = document.getElementById('holisticFocusChart').getContext('2d');
+        new Chart(holisticFocusCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Critical Thinking', 'Vocational Skills', 'Creativity', 'Core Academics'],
+                datasets: [{
+                    data: [30, 25, 20, 25],
+                    backgroundColor: ['#00A1E4', '#F7941D', '#FDB913', '#00529B'],
+                    borderColor: ['#00A1E4', '#F7941D', '#FDB913', '#00529B'],
+                    borderWidth: 1
+                }]
+            },
+            options: { ...chartDefaults, cutout: '70%' }
+        });
+
+        const shiftsCtx = document.getElementById('shiftsChart').getContext('2d');
+        const shiftLabels = ['Learning Approach', 'Assessment Method', 'Curriculum Structure', 'Teacher Role', 'Skill Focus'];
+        new Chart(shiftsCtx, {
+            type: 'bar',
+            data: {
+                labels: shiftLabels.map(label => wrapLabel(label)),
+                datasets: [
+                    {
+                        label: 'Traditional Approach',
+                        data: [7, 8, 9, 8, 6],
+                        backgroundColor: '#00529B',
+                        borderRadius: 4,
+                    },
+                    {
+                        label: 'NCF-SE 2023 Vision',
+                        data: [10, 9, 8, 9, 10],
+                        backgroundColor: '#00A1E4',
+                        borderRadius: 4,
+                    }
+                ]
+            },
+            options: {
+                ...chartDefaults,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        display: false,
+                        max: 10,
+                    },
+                    y: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            font: {
+                                family: "'Inter', sans-serif",
+                                size: 14,
+                                weight: '600'
+                            },
+                            color: '#1E293B'
+                        }
+                    }
+                },
+                plugins: {
+                    ...chartDefaults.plugins,
+                    legend: {
+                        position: 'top',
+                    },
+                }
+            }
+        });
+
+        const challengesCtx = document.getElementById('challengesChart').getContext('2d');
+        const challengeLabels = ['Teacher Training Capacity', 'Resource Constraints', 'Infrastructure Gaps', 'Assessment Reform', 'Community Buy-in'];
+        new Chart(challengesCtx, {
+            type: 'radar',
+            data: {
+                labels: challengeLabels.map(label => wrapLabel(label)),
+                datasets: [{
+                    label: 'Challenge Magnitude',
+                    data: [9, 8, 8, 7, 6],
+                    backgroundColor: 'rgba(0, 161, 228, 0.2)',
+                    borderColor: '#00A1E4',
+                    pointBackgroundColor: '#00A1E4',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#00A1E4'
+                }]
+            },
+            options: {
+                ...chartDefaults,
+                scales: {
+                    r: {
+                        angleLines: { color: '#d1d5db' },
+                        grid: { color: '#e5e7eb' },
+                        pointLabels: {
+                            font: {
+                                family: "'Inter', sans-serif",
+                                size: 12,
+                                weight: '500'
+                            },
+                            color: '#1E293B'
+                        },
+                        ticks: {
+                            backdropColor: 'transparent',
+                            color: '#64748b'
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 10
+                    }
+                },
+                 plugins: {
+                    ...chartDefaults.plugins,
+                    legend: {
+                        display: false
+                    },
+                }
+            }
+        });
+    </script>
+</body>
+</html>
