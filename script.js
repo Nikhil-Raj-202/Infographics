@@ -1,11 +1,4 @@
-Sure, Nikhil! Here's a fully optimized and modular version of your Chart.js script. It improves performance, readability, and maintainability by:
-- Reusing chart options and font settings
-- Caching DOM elements
-- Pre-wrapping labels
-- Modularizing chart data creation
-- Storing chart instances for future updates
 
-✅ Optimized Chart.js Script
 <script>
     // 🔧 Utility: Wrap long labels
     const wrapLabel = (label, maxWidth = 16) => {
